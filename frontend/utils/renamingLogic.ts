@@ -25,15 +25,19 @@ export const generateNewFilename = (originalName: string, result: AnalysisResult
   // Rule 2: Determine Prefix based on Viewpoint
   // Front -> "BS" + Plate + Color
   // Rear -> Plate + Color
+  // Special Rule: If plate has more than 8 characters, no color suffix is added
   let newBaseName = "";
   const cleanPlate = result.plateNumber.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  
+  // Check if plate has more than 8 characters
+  const colorSuffix = cleanPlate.length > 8 ? '' : colorChar;
 
   if (result.viewpoint === Viewpoint.FRONT) {
-    newBaseName = `BS${cleanPlate}${colorChar}`;
+    newBaseName = `BS${cleanPlate}${colorSuffix}`;
   } else {
     // Covers REAR and UNKNOWN (defaulting to REAR logic if standard is strict, or just applying basic pattern)
     // Prompt implies specific rule for "Rear", doesn't specify unknown, so we treat Rear as the base case without prefix.
-    newBaseName = `${cleanPlate}${colorChar}`;
+    newBaseName = `${cleanPlate}${colorSuffix}`;
   }
 
   return `${newBaseName}${extString}`;

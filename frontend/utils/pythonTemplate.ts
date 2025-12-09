@@ -98,13 +98,16 @@ def get_new_filename(original_name, result):
     else:
         color_char = "T"
         
+    # Quy tắc đặc biệt: Nếu biển số có lớn hơn 8 ký tự thì không thêm ký tự màu
+    color_suffix = "" if len(clean_plate) > 8 else color_char
+    
     # Quy tắc 2: Tiền tố theo góc chụp
     # Phía trước: BS + Biển số + Màu
     # Phía sau (hoặc khác): Biển số + Màu
     if view == "front":
-        new_base = f"BS{clean_plate}{color_char}"
+        new_base = f"BS{clean_plate}{color_suffix}"
     else:
-        new_base = f"{clean_plate}{color_char}"
+        new_base = f"{clean_plate}{color_suffix}"
         
     # Giữ nguyên đuôi file
     ext = os.path.splitext(original_name)[1]
