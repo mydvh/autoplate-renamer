@@ -269,7 +269,7 @@ const RenamerTool: React.FC<RenamerToolProps> = ({ user, onLogout, onNavigateToA
           AutoPlate Renamer
         </h1>
         <p className="text-slate-400 max-w-lg mx-auto text-center">
-          {user.role === 'ADMIN' ? 'Admin Mode' : 'Standard User Mode'} - Supported by maxvn2268@gmail.com - 0944.452.268
+          {user.role === 'ADMIN' ? 'Admin Mode' : 'Standard User Mode'}
         </p>
       </header>
 
@@ -442,7 +442,11 @@ const RenamerTool: React.FC<RenamerToolProps> = ({ user, onLogout, onNavigateToA
           files.map((file) => <FileRow key={file.id} item={file} />)
         )}
       </div>
+      <p className="text-slate-400 max-w-lg mx-auto text-center">
+          Supported by: maxvn2268@gmail.com - 0944.452.268
+        </p>
     </div>
+    
   );
 };
 
