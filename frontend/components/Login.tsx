@@ -86,7 +86,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         </form>
         
         <div className="mt-6 text-center text-xs text-slate-500">
-          <p>Default Admin: <code className="text-slate-400">admin@example.com</code> / <code className="text-slate-400">123456</code></p>
+          <p>Supported by: <code className="text-slate-400">maxvn2268@gmail.com</code> - <code className="text-slate-400">0944.452.268</code></p>
         </div>
       </div>
     </div>
