@@ -3,7 +3,7 @@
 ## 🔐 Step-by-Step SSL Certificate Setup
 
 ### Prerequisites
-1. Domain `anhxe.servehttp.com` must be pointing to your server IP
+1. Domain `anhxe.dangkiemxe.net` must be pointing to your server IP
 2. Ports 80 and 443 must be open in firewall
 
 ### Option 1: Automatic Setup (Recommended)
@@ -22,10 +22,10 @@ docker-compose up -d
 docker-compose run --rm certbot certonly \
   --webroot \
   --webroot-path=/var/www/certbot \
-  --email admin@anhxe.servehttp.com \
+  --email admin@anhxe.dangkiemxe.net \
   --agree-tos \
   --no-eff-email \
-  -d anhxe.servehttp.com
+  -d anhxe.dangkiemxe.net
 ```
 
 **Step 3: Switch to SSL nginx config**
@@ -44,7 +44,7 @@ docker-compose restart nginx
 docker-compose exec certbot certbot certificates
 
 # Test HTTPS
-curl -I https://anhxe.servehttp.com
+curl -I https://anhxe.dangkiemxe.net
 ```
 
 ### Option 2: Manual Setup
@@ -60,7 +60,7 @@ docker exec -it autoplate-nginx sh
 
 # Inside container:
 apk add certbot certbot-nginx
-certbot --nginx -d anhxe.servehttp.com
+certbot --nginx -d anhxe.dangkiemxe.net
 ```
 
 **3. Copy certificates to volume**
@@ -72,33 +72,33 @@ docker cp autoplate-nginx:/etc/letsencrypt ./certbot/conf
 
 ✅ Domain resolves to server IP
 ```bash
-nslookup anhxe.servehttp.com
+nslookup anhxe.dangkiemxe.net
 ```
 
 ✅ Port 80 is accessible
 ```bash
-curl http://anhxe.servehttp.com
+curl http://anhxe.dangkiemxe.net
 ```
 
 ✅ Certbot can reach ACME challenge
 ```bash
-curl http://anhxe.servehttp.com/.well-known/acme-challenge/test
+curl http://anhxe.dangkiemxe.net/.well-known/acme-challenge/test
 ```
 
 ✅ Certificate files exist
 ```bash
-ls -la certbot/conf/live/anhxe.servehttp.com/
+ls -la certbot/conf/live/anhxe.dangkiemxe.net/
 # Should see: fullchain.pem, privkey.pem
 ```
 
 ✅ HTTPS works
 ```bash
-curl -I https://anhxe.servehttp.com
+curl -I https://anhxe.dangkiemxe.net
 ```
 
 ✅ HTTP redirects to HTTPS
 ```bash
-curl -I http://anhxe.servehttp.com
+curl -I http://anhxe.dangkiemxe.net
 # Should see: 301 Moved Permanently
 ```
 
@@ -107,10 +107,10 @@ curl -I http://anhxe.servehttp.com
 **Problem: "Failed authorization procedure"**
 ```bash
 # Check DNS
-nslookup anhxe.servehttp.com
+nslookup anhxe.dangkiemxe.net
 
 # Check if port 80 is accessible
-curl -v http://anhxe.servehttp.com/.well-known/acme-challenge/test
+curl -v http://anhxe.dangkiemxe.net/.well-known/acme-challenge/test
 
 # Check nginx logs
 docker-compose logs nginx
@@ -132,7 +132,7 @@ docker-compose run --rm certbot certonly \
   --webroot \
   --webroot-path=/var/www/certbot \
   --staging \
-  -d anhxe.servehttp.com
+  -d anhxe.dangkiemxe.net
 ```
 
 ### Testing Before Production
@@ -143,10 +143,10 @@ docker-compose run --rm certbot certonly \
   --webroot \
   --webroot-path=/var/www/certbot \
   --staging \
-  --email admin@anhxe.servehttp.com \
+  --email admin@anhxe.dangkiemxe.net \
   --agree-tos \
   --no-eff-email \
-  -d anhxe.servehttp.com
+  -d anhxe.dangkiemxe.net
 ```
 
 Once working, delete staging certs and request production:
@@ -173,8 +173,8 @@ docker-compose exec nginx nginx -s reload
 ## Quick Reference
 
 ### Certificate Locations
-- Certificates: `certbot/conf/live/anhxe.servehttp.com/`
-- Renewal config: `certbot/conf/renewal/anhxe.servehttp.com.conf`
+- Certificates: `certbot/conf/live/anhxe.dangkiemxe.net/`
+- Renewal config: `certbot/conf/renewal/anhxe.dangkiemxe.net.conf`
 - Logs: `certbot/conf/logs/`
 
 ### Useful Commands

@@ -2,7 +2,7 @@
 # HTTP - Redirect all traffic to HTTPS
 server {
     listen 80;
-    server_name anhxe.servehttp.com;
+    server_name anhxe.dangkiemxe.net;
 
     # Allow certbot challenges
     location /.well-known/acme-challenge/ {

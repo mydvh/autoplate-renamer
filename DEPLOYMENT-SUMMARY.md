@@ -11,7 +11,7 @@
 - ✅ Backup/restore scripts created
 
 ### 2. **Domain Configuration**
-- ✅ Domain: `https://anhxe.servehttp.com`
+- ✅ Domain: `https://anhxe.dangkiemxe.net`
 - ✅ Updated `.env` with production URLs
 - ✅ Updated `FRONTEND_URL` to HTTPS
 - ✅ Updated `VITE_API_URL` build arg
@@ -88,9 +88,9 @@ autoplate-renamer/
 
 | Service | URL | Internal |
 |---------|-----|----------|
-| Frontend | https://anhxe.servehttp.com | frontend:80 |
-| API | https://anhxe.servehttp.com/api | backend:5000 |
-| Health | https://anhxe.servehttp.com/health | backend:5000/api/health |
+| Frontend | https://anhxe.dangkiemxe.net | frontend:80 |
+| API | https://anhxe.dangkiemxe.net/api | backend:5000 |
+| Health | https://anhxe.dangkiemxe.net/health | backend:5000/api/health |
 | Database | N/A (internal only) | postgres:5432 |
 
 ## 🚦 Deployment Steps
@@ -98,7 +98,7 @@ autoplate-renamer/
 ### First-Time Setup (with SSL)
 
 1. **Prepare server**
-   - Point domain `anhxe.servehttp.com` to server IP
+   - Point domain `anhxe.dangkiemxe.net` to server IP
    - Open ports 80, 443 in firewall
 
 2. **Configure environment**
@@ -123,8 +123,8 @@ autoplate-renamer/
    ```bash
    docker-compose run --rm certbot certonly \
      --webroot -w /var/www/certbot \
-     -d anhxe.servehttp.com \
-     --email admin@anhxe.servehttp.com \
+     -d anhxe.dangkiemxe.net \
+     --email admin@anhxe.dangkiemxe.net \
      --agree-tos --no-eff-email
    ```
 
@@ -136,7 +136,7 @@ autoplate-renamer/
 
 7. **Verify**
    ```bash
-   curl -I https://anhxe.servehttp.com
+   curl -I https://anhxe.dangkiemxe.net
    docker-compose ps
    ```
 
@@ -164,7 +164,7 @@ docker-compose up -d --build
 ### Health Checks
 ```bash
 # Application
-curl https://anhxe.servehttp.com/health
+curl https://anhxe.dangkiemxe.net/health
 
 # Services
 docker-compose ps
@@ -206,7 +206,7 @@ chmod +x scripts/backup-db.sh
 docker-compose run --rm certbot certonly --staging ...
 
 # Check certificate
-ls -la certbot/conf/live/anhxe.servehttp.com/
+ls -la certbot/conf/live/anhxe.dangkiemxe.net/
 
 # Verify nginx config
 docker-compose exec nginx nginx -t
@@ -215,7 +215,7 @@ docker-compose exec nginx nginx -t
 ### Cannot Access Site
 ```bash
 # Check DNS
-nslookup anhxe.servehttp.com
+nslookup anhxe.dangkiemxe.net
 
 # Check containers
 docker-compose ps
@@ -269,5 +269,5 @@ docker-compose exec postgres psql -U autoplate_user -d autoplate_renamer -c "\dt
 
 ---
 
-**Production URL:** https://anhxe.servehttp.com  
+**Production URL:** https://anhxe.dangkiemxe.net  
 **Admin Login:** admin@example.com / 123456 (change after first login)

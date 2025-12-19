@@ -4,7 +4,7 @@
 
 ### Prerequisites
 - Docker and Docker Compose installed
-- Domain `anhxe.servehttp.com` pointing to your server IP
+- Domain `anhxe.dangkiemxe.net` pointing to your server IP
 - Ports 80 and 443 open in firewall
 
 ### Architecture
@@ -22,9 +22,9 @@ Nginx (Port 80/443) - SSL Termination
 ### 1. Configure Environment Variables
 Edit `.env` file:
 ```bash
-DOMAIN=anhxe.servehttp.com
-EMAIL=admin@anhxe.servehttp.com
-FRONTEND_URL=https://anhxe.servehttp.com
+DOMAIN=anhxe.dangkiemxe.net
+EMAIL=admin@anhxe.dangkiemxe.net
+FRONTEND_URL=https://anhxe.dangkiemxe.net
 ```
 
 ### 2. First-Time SSL Certificate Setup
@@ -42,10 +42,10 @@ docker-compose up -d nginx backend frontend
 docker-compose run --rm certbot certonly \
   --webroot \
   --webroot-path=/var/www/certbot \
-  --email admin@anhxe.servehttp.com \
+  --email admin@anhxe.dangkiemxe.net \
   --agree-tos \
   --no-eff-email \
-  -d anhxe.servehttp.com
+  -d anhxe.dangkiemxe.net
 ```
 
 **Step 3: Uncomment SSL lines in nginx.conf and restart**
@@ -99,8 +99,8 @@ docker-compose exec certbot certbot certificates
 ## 📊 Monitoring
 
 ### Health Checks
-- Backend: https://anhxe.servehttp.com/health
-- Frontend: https://anhxe.servehttp.com/
+- Backend: https://anhxe.dangkiemxe.net/health
+- Frontend: https://anhxe.dangkiemxe.net/
 
 ### View Logs
 ```bash
@@ -136,14 +136,14 @@ sudo systemctl stop nginx
 STAGING=1 docker-compose run --rm certbot certonly ...
 
 # Check certificate files
-ls -la certbot/conf/live/anhxe.servehttp.com/
+ls -la certbot/conf/live/anhxe.dangkiemxe.net/
 
 # Verify nginx config
 docker-compose exec nginx nginx -t
 ```
 
 ### Cannot Access Site
-1. Check DNS: `nslookup anhxe.servehttp.com`
+1. Check DNS: `nslookup anhxe.dangkiemxe.net`
 2. Check firewall: `sudo ufw status`
 3. Check containers: `docker-compose ps`
 4. Check logs: `docker-compose logs nginx`
@@ -241,6 +241,6 @@ For issues, check:
 
 ---
 
-**Production URL:** https://anhxe.servehttp.com
-**API URL:** https://anhxe.servehttp.com/api
+**Production URL:** https://anhxe.dangkiemxe.net
+**API URL:** https://anhxe.dangkiemxe.net/api
 **Default Admin:** admin@example.com / 123456

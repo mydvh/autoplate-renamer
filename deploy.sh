@@ -13,7 +13,7 @@ if [ -f .env ]; then
     export $(cat .env | grep -v '^#' | xargs)
 fi
 
-DOMAIN="${DOMAIN:-anhxe.servehttp.com}"
+DOMAIN="${DOMAIN:-anhxe.dangkiemxe.net}"
 
 echo "Domain: $DOMAIN"
 echo ""

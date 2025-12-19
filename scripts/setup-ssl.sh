@@ -3,8 +3,8 @@
 # SSL Certificate Setup Script using Certbot
 # This script will obtain SSL certificates from Let's Encrypt
 
-DOMAIN="${DOMAIN:-anhxe.servehttp.com}"
-EMAIL="${EMAIL:-admin@anhxe.servehttp.com}"
+DOMAIN="${DOMAIN:-anhxe.dangkiemxe.net}"
+EMAIL="${EMAIL:-admin@anhxe.dangkiemxe.net}"
 STAGING="${STAGING:-0}" # Set to 1 for testing
 
 echo "=========================================="
