@@ -36,7 +36,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               <Car className="w-6 h-6 text-white" />
             </div>
           <h1 className="text-2xl font-bold text-white mb-2">AutoPlate Renamer</h1>
-          <p className="text-slate-400 text-sm">Please sign in to continue</p>
+          <p className="text-slate-400 text-sm">Hãy đăng nhập để tiếp tục</p>
         </div>
 
         {error && (
@@ -81,7 +81,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
             disabled={loading}
             className="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg shadow-lg shadow-blue-900/20 transition-all flex items-center justify-center gap-2"
           >
-            {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Sign In'}
+            {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : 'Đăng nhập'}
           </button>
         </form>
         
