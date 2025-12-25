@@ -36,7 +36,13 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               <Car className="w-6 h-6 text-white" />
             </div>
           <h1 className="text-2xl font-bold text-white mb-2">AutoPlate Renamer</h1>
-          <p className="text-slate-400 text-sm">Hãy đăng nhập để tiếp tục</p>
+          <p className="text-slate-400 text-sm">Hướng dẫn sử dụng <a href="https://anhxe.dangkiemxe.net/user-guide.pdf" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-blue-500 hover:text-blue-700 hover:underline"
+    >
+      tại đây
+    </a></p>
         </div>
 
         {error && (
@@ -86,15 +92,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         </form>
         
         <div className="mt-6 text-center text-xs text-slate-500">
-          <p>Supported by: <code className="text-slate-400">maxvn2268@gmail.com</code> - <code className="text-slate-400">0944.452.268</code></p>
-          <p className="mt-1">Hướng dẫn sử dụng <a href="https://anhxe.dangkiemxe.net/user-guide.pdf" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="text-blue-500 hover:text-blue-700 hover:underline"
-    >
-      tại đây
-    </a>
-  </p>
+          <p>Supported by: <code className="text-slate-400">maxvn2268@gmail.com</code> - <code className="text-slate-400">0944.452.268</code></p>          
         </div>
       </div>
     </div>
