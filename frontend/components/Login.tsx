@@ -85,7 +85,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         </form>
         
         <div className="mt-6 text-center text-xs text-slate-500">
-          <p>Supported by: <code className="text-slate-400">maxvn2268@gmail.com</code> - <code className="text-slate-400">0944.452.268</code></p>
+          <p>Hotline: <code className="text-slate-400">0944.452.268</code> - <code className="text-slate-400">maxvn2268@gmail.com</code></p>
           <p className="mt-1">Hướng dẫn sử dụng <a href="https://anhxe.dangkiemxe.net/user-guide.pdf" 
       target="_blank" 
       rel="noopener noreferrer"
